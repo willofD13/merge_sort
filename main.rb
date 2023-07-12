@@ -11,18 +11,18 @@ def merge_sort(array)
     b = array.slice(n/2,n)
     merge_sort(a)
     merge_sort(b)
-    Ia = 0 
-    Ib = 0
-    Ic = 0
-    while Ia < a.length || Ib < b.length 
-      if a[Ia] < b[Ib]
-        c[Ic] = a[Ia]
-        Ia += 1
+    pointer_a = 0 
+    pointer_b= 0
+    pointer_c = 0
+    while pointer_a < a.length || pointer_b < b.length 
+      if a[pointer_a] < b[pointer_b]
+        c[pointer_c] = a[pointer_a]
+        pointer_a += 1
       else 
-        c[Ic] = b[Ib] 
-        Ib += 1
+        c[pointer_c] = b[pointer_b] 
+        pointer_a += 1
       end 
-      Ia += 1
+      pointer_c += 1
     end
   end 
 end
