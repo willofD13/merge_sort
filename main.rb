@@ -14,7 +14,16 @@ def merge_sort(array)
     Ia = 0 
     Ib = 0
     Ic = 0
-    
+    while Ia < a.length || Ib < b.length 
+      if a[Ia] < b[Ib]
+        c[Ic] = a[Ia]
+        Ia += 1
+      else 
+        c[Ic] = b[Ib] 
+        Ib += 1
+      end 
+      Ia += 1
+    end
   end 
 end
 
