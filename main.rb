@@ -2,6 +2,8 @@ def merge_sort(array)
   n = array.length
   a = []
   b = []
+  c = []
+  
   if array.length == 1
     return 
   else 
@@ -9,6 +11,10 @@ def merge_sort(array)
     b = array.slice(n/2,n)
     merge_sort(a)
     merge_sort(b)
+    Ia = 0 
+    Ib = 0
+    Ic = 0
+    
   end 
 end
 
