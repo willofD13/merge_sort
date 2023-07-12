@@ -20,7 +20,7 @@ def merge_sort(array)
         pointer_a += 1
       else 
         c[pointer_c] = b[pointer_b] 
-        pointer_a += 1
+        pointer_b += 1
       end 
       pointer_c += 1
     end
