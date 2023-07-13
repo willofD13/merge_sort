@@ -1,8 +1,8 @@
+require 'pry-byebug'
 def merge_sort(array)
   n = array.length
   a = []
   b = []
-  c = []
   
   if n == 1
     return
@@ -14,23 +14,24 @@ def merge_sort(array)
     pointer_a = 0 
     pointer_b = 0
     pointer_c = 0
+    array.clear
     while pointer_a < a.length && pointer_b < b.length
       if a[pointer_a] < b[pointer_b]
-        c[pointer_c] = a[pointer_a]
+      array[pointer_c] = a[pointer_a]
         pointer_a += 1
       else 
-        c[pointer_c] = b[pointer_b]
+        array[pointer_c] = b[pointer_b]
         pointer_b += 1
       end
       pointer_c += 1 
     end
     if pointer_a == a.length
-      c.push(b[pointer_b..b.length]).flatten!
+      array.push(b[pointer_b..b.length]).flatten!
     else 
-      c.push(a[pointer_a..a.length]).flatten!
+      array.push(a[pointer_a..a.length]).flatten!
     end
-    return c
+    #binding.pry
   end 
 end
 
-merge_sort([1,2,5,3,6,2,4,8])
+p merge_sort([1,5,3,6,7,4,8])
