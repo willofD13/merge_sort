@@ -1,34 +1,34 @@
 require 'pry-byebug'
 def merge_sort(array)
   n = array.length
-  a = []
-  b = []
+  left_half = []
+  right_half = []
   
   if n == 1
     return
   else 
-    a = array.slice(0,n/2)
-    b = array.slice(n/2,n)
-    merge_sort(a)
-    merge_sort(b)
-    pointer_a = 0 
-    pointer_b = 0
-    pointer_c = 0
+    left_half = array.slice(0,n/2)
+    right_half = array.slice(n/2,n)
+    merge_sort(left_half)
+    merge_sort(right_half)
+    a = 0 
+    b = 0
+    c = 0
     array.clear #the original array empties and becomes the new merged array
-    while pointer_a < a.length && pointer_b < b.length
-      if a[pointer_a] < b[pointer_b]
-      array[pointer_c] = a[pointer_a]
-        pointer_a += 1
+    while a < left_half.length && b < right_half.length
+      if left_half[a] < right_half[b]
+      array[c] = left_half[a]
+      a += 1
       else 
-        array[pointer_c] = b[pointer_b]
-        pointer_b += 1
+        array[c] = right_half[b]
+        b += 1
       end
-      pointer_c += 1 
+      c += 1 
     end
-    if pointer_a == a.length
-      array.push(b[pointer_b..b.length]).flatten!
+    if a == left_half.length
+      array.push(right_half[b..right_half.length]).flatten!
     else 
-      array.push(a[pointer_a..a.length]).flatten!
+      array.push(left_half[a..left_half.length]).flatten!
     end
     #binding.pry
   end 
