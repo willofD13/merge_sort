@@ -14,7 +14,7 @@ def merge_sort(array)
     pointer_a = 0 
     pointer_b = 0
     pointer_c = 0
-    array.clear
+    array.clear #the original array empties and becomes the new merged array
     while pointer_a < a.length && pointer_b < b.length
       if a[pointer_a] < b[pointer_b]
       array[pointer_c] = a[pointer_a]
